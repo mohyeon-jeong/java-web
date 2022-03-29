@@ -67,13 +67,13 @@ public class BoardController extends HttpServlet {
 			if (action == null) {
 				articlesList = boardService.listArticles();
 				request.setAttribute("articlesList", articlesList);
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board03/listArticles.jsp";
 			} else if (action.equals("/listArticles.do")) {
 				articlesList = boardService.listArticles();
 				request.setAttribute("articlesList", articlesList);
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board03/listArticles.jsp";
 			} else if (action.equals("/articleForm.do")) {
-				nextPage = "/board02/articleForm.jsp";
+				nextPage = "/board03/articleForm.jsp";
 			} else if (action.equals("/addArticle.do")) {
 				int articleNO=0;
 				Map<String, String> articleMap = upload(request, response);
@@ -101,7 +101,7 @@ public class BoardController extends HttpServlet {
 
 				return;
 			}else {
-				nextPage = "/board02/listArticles.jsp";
+				nextPage = "/board03/listArticles.jsp";
 			}
 
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
